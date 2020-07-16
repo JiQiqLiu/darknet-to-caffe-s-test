@@ -8,7 +8,7 @@ Conversion of the caffemodel model required by the pre-deployment deployed in th
 * Caffe1.0
 
 # Ready
-## Step1:caffe configuration 
+### Step1:caffe configuration 
 you should join unsample layer.
 Since caffe lacks the unsample layer of darknet, you need to add the corresponding unsample layer to the caffe environment and recompile.
 I have put the layer to be added in caffe-add-unsample.
@@ -29,7 +29,7 @@ message UpsampleParameter{
 optional int32 scale = 1 [default = 1];
 }...
 ```  
-## Step2:Recompile caffe environment
+### Step2:Recompile caffe environment
 You need to enter the command to recompile caffe：
 
 ##### 1.Clean up the compiled environment
