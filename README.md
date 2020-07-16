@@ -44,11 +44,21 @@ $ make all -j8
 ```javascript
 $ make pycaffe -j8
 ```
+### Step3:
 
-# Demo
+
+# Demo one - darknet to caffe
 ```javascript
 $ python cfg[in] weights[in] prototxt[out] caffemodel[out]
 ```  
-# Example
+# Example - darknet to caffe
 ```javascript
 $ python cfg/yolov3.cfg weights/yolov3.weights prototxt/yolov3.prototxt caffemodel/yolov3.caffemodel
+```
+
+
+# Reference
+Thanks for the following items.
+
+* [ChenYingpeng](https://github.com/ChenYingpeng/darknet2caffe) 
+* [jasonlovescoding](https://github.com/JiQiqLiu/darknet-to-caffe-s-test)
