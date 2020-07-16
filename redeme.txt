@@ -1,2 +1,0 @@
-darknet to caffe's test
-Conversion of the caffemodel model required by the pre-deployment deployed in the Hisilicon 35xx series
