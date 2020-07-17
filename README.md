@@ -82,25 +82,45 @@ $ python detect_one.py --prototxt=model/yolov3.prototxt --caffemodel=model/yolov
 
 # Test visualization results
 ### Visdrone  results
-Visdrone darknet:
+* Visdrone darknet:
 
 ![visdroneyolov3](visdrone_yolov3.jpg)
-visdrone caffe:
+* visdrone caffe:
 
 ![visdronecaffe](visdrone_caffe.jpg)
 
 ### My airport data results
-Airplane darknet:
+* Airplane darknet:
 
 ![airplane_result_yolo](airplane_result_yolo.jpg)
 ![airplane_yolo_num](airplane_yolo_num.jpg)
 
-Airpalne caffe:
+* Airpalne caffe:
 
 ![airplane_resultion_caffe](airplane_resultion_caffe.jpg)
 ![airplane_caffe_num](airplane_caffe_num.jpg)
 
 # Test index
+Recall rate of all datasets before and after conversion.
+
+* darknet recallL：
+![yolo_recall](yolo_recall.jpg)
+* caffe recall：
+![caffe_recall](caffe_recall.jpg)
+
+### Notes
+
+A simplest YOLOv3 model in caffe for python3.
+
+This is merely a practice project. Note that I implemented an interp layer in python for compatibility.This is because interp layer is only viable in deeplab caffe, not in the official one. Moreover, the behavior of interp layer in deeplab is different from torch.nn.UpsamplingBilinear2d,in a sense that pytorch rescales (3,13,13) to (3,26,26) with a factor of 2, but deeplab caffe rescales it to (3,25,25) with the same factor. This causes weird performance degradation.To make the model dependent on C only, you need to customize the interp layer.In deeplab version, note in interp_layer.cpp, you need to fix the logic (take an example):
+```javascript
+height_out_ = height_in_eff_ + (height_in_eff_ - 1) * (zoom_factor - 1)
+```
+into
+```javascript
+height_out_ = height_in_eff_ * zoom_factor
+```
+
 # Reference
 Thanks for the following items.
 
