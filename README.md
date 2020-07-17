@@ -1,4 +1,3 @@
-
 # darknet-to-caffe-s-test
 Conversion of the caffemodel model required by the pre-deployment deployed in the Hisilicon 35xx series.The yolov3 model is deployed on the hi35xx series, and the RuyiStudio under the Windows system developed by HiSilicon and the nine of the Linux system developed by the company itself are both caffemodels, and then they will be converted into on-chip recognizable .wk models . So we need to convert the yolov3 model trained by darknet. In addition, the chip that uses caffemodel as the main loading model or conversion model can also use this model....
 
@@ -80,15 +79,28 @@ $ python detect_one.py --prototxt=[in] --caffemodel=[in] --classfile=[in] --imag
 ```javascript
 $ python detect_one.py --prototxt=model/yolov3.prototxt --caffemodel=model/yolov3.caffemodel --classfile=model/coco.names --image==images/dog-cycle-car.png --resolution==416
 ```
-# Test visualization results
-The visdrone results of yolov3 training are as follows:
-![ljq](visdrone_yolov3.jpg)
 
-The result of visdrone converted by caffe is as follows:
-![ljq](visdrone_caffe.jpg)
+# Test visualization results
+### Visdrone  results
+Visdrone darknet:
+
+![visdroneyolov3](visdrone_yolov3.jpg)
+visdrone caffe:
+
+![visdronecaffe](visdrone_caffe.jpg)
+
+### My airport data results
+Airplane darknet:
+
+![airplane_result_yolo](airplane_result_yolo.jpg)
+![airplane_yolo_num](airplane_yolo_num.jpg)
+
+Airpalne caffe:
+
+![airplane_resultion_caffe](airplane_resultion_caffe.jpg)
+![airplane_caffe_num](airplane_caffe_num.jpg)
 
 # Test index
-
 # Reference
 Thanks for the following items.
 
