@@ -44,18 +44,50 @@ $ make all -j8
 ```javascript
 $ make pycaffe -j8
 ```
-### Step3:
+### Step3:The trained model
+Here I have several model files that have been trained for you to try. The download address is as follows. After downloading and unzipping, copy the folder to the darknet to caffe file directory and use it.
 
+* [Coco](https://pan.baidu.com/s/10f9Lg66spfVw_gSWv39NfA) dataset has been `trained weights model` file and `cfg configuration file`.
 
-# Demo one - darknet to caffe
+  Extraction code: bijy
+  
+* [Visdrone](https://pan.baidu.com/s/1N-71i2TjPQyYDb5aBEUM6Q) dataset has been `trained weights model` file and `cfg configuration file`.
+
+  Extraction code: trdx
+
+* [Bdd100K](https://pan.baidu.com/s/1JdoXMn8d_4vnRBzkUdq2Iw) dataset has been `trained weights model` file and `cfg configuration file`.
+
+  Extraction code: 5ur3
+
+* [DIOR](https://pan.baidu.com/s/1V3Jc8WX4bRn46UZD3xbDwQ) dataset has been `trained weights model` file and `cfg configuration file`.
+
+  Extraction code: y26i
+  
+## Demo one - darknet to caffe
 ```javascript
 $ python cfg[in] weights[in] prototxt[out] caffemodel[out]
 ```  
-# Example - darknet to caffe
+## Example one - darknet to caffe
 ```javascript
 $ python cfg/yolov3.cfg weights/yolov3.weights prototxt/yolov3.prototxt caffemodel/yolov3.caffemodel
 ```
+## Demo two - darknet to caffe's test
+You need to modify the caffe environment in detect_one.py to your own installation environment, and modify the inp_dim and num_classes in utils.py to the values suitable for your data size and category.
+```javascript
+$ python detect_one.py --prototxt=[in] --caffemodel=[in] --classfile=[in] --image==[in] --resolution==[out]
+```
+## Example two - darknet to caffe's test
+```javascript
+$ python detect_one.py --prototxt=model/yolov3.prototxt --caffemodel=model/yolov3.caffemodel --classfile=model/coco.names --image==images/dog-cycle-car.png --resolution==416
+```
+# Test visualization results
+The visdrone results of yolov3 training are as follows:
+![ljq](visdrone_yolov3.jpg)
 
+The result of visdrone converted by caffe is as follows:
+![ljq](visdrone_caffe.jpg)
+
+# Test index
 
 # Reference
 Thanks for the following items.
